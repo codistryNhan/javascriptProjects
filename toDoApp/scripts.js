@@ -15,6 +15,7 @@ class ToDoClass {
       }
     ];
     this.loadTasks();
+    this.addEventListeners();
   }
 
   loadTasks() {
@@ -53,6 +54,37 @@ class ToDoClass {
     event.preventDefault();
     this.tasks.splice(taskIndex, 1);
     this.loadTasks();
+  }
+
+  addTaskClick() {
+    let target = document.getElementById('addTask');
+    this.addTask(target.value);
+    target.value = ""
+  }
+
+  addTask(task) {
+    let newTask = {
+      task,
+      isComplete: false,
+    };
+
+    let parentDiv = document.getElementById('addTask').parentElement;
+    if(task === '') {
+      parentDiv.classList.add('has-error');
+    } else {
+      parentDiv.classList.remove('has-error');
+      this.tasks.push(newTask);
+      this.loadTasks();
+    }
+  }
+
+  addEventListeners() {
+    document.getElementById('addTask').addEventListener('keypress', event => {
+      if(event.keyCode === 13) {
+        this.addTask(event.target.value);
+        event.target.value = '';
+      }
+    })
   }
 }
 
