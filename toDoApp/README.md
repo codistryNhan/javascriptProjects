@@ -9,4 +9,4 @@ To create an app that mimics a todo list.
 3. Store data to be persisted.
 ```
 
-![Fig 1](toDoList_1.png =300x)
+<img src="toDoList_1.png" alt="To Do App" width="300px">
