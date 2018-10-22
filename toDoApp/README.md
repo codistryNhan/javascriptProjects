@@ -9,4 +9,4 @@ To create an app that mimics a todo list.
 3. Store data to be persisted.
 ```
 
-![alt text](toDoList_1.png "Fig 1" =300x)
+![Fig 1](toDoList_1.png =300x)
